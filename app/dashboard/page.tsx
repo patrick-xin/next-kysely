@@ -1,5 +1,13 @@
+import { auth } from "@/auth";
+
 const Dashboard = async () => {
-    return <div>Dashboard Page</div>;
+    const session = await auth()
+
+    return (
+        <div>
+            Email: {session?.user?.email}
+        </div>
+    )
 };
 
 export default Dashboard;
